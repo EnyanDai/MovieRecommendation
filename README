@@ -1,0 +1,24 @@
+The code requires about 1.9GB to run through. Please ensure satisfy this memory requirement. And due to the implement of parallel computing,
+this code perfers to be run on a multicores machine which all cpus are free.
+
+Please use:
+	cd src
+	javac -cp . PearsonsCorrelation.java
+	java PearsonsCorrelation -trainingFile <trainingFile> -outputFile <outputFile>
+to get matrix file. (The commind is the same as provied initially).Please fill in the trainingFile and outputFile
+Or you can use the makefile just by changing traininFile and outputFile.
+
+The parameters has already been set in the code. 
+1)The number of threads are 4. 
+2)The minimal number of commonly rated movies----MinCom is 15
+	If number of commonly rated movies is less than MinCom, the Persons correlation will be Set to NaN.
+
+Please use:
+	cd src
+    javac  -cp . MovieRunner.java
+	java MovieRunner -trainingFile <trainingFile> -testFile <testFile> -matrixFile <matrixFile>
+to get evaluation result. (The commind is the same as provied initially).Please fill in the trainingFile , testFile and matrixfile
+Or you can use the makefile just by changing traininFile, testFile and matrixFile 
+The parameters has already been set in the code. 
+1)The maximum number of neighbors to predict ratings----MaxNei is infinite 
+	If the number of neighbors can be used to predict ratings, we will only choose top MaxNei neighbors to make prediction.
